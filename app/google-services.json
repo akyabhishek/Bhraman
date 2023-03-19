@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "305699376378",
+    "firebase_url": "https://brahman-4ed71-default-rtdb.firebaseio.com",
+    "project_id": "brahman-4ed71",
+    "storage_bucket": "brahman-4ed71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305699376378:android:8813c802cf8ca2dd788d43",
+        "android_client_info": {
+          "package_name": "com.edorbit.bhraman"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305699376378-i971e7iotf8mp1uuvviep7f2t1atr69s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.edorbit.bhraman",
+            "certificate_hash": "1e917ba8da0407e78bdd188720e7b402d95a13cc"
+          }
+        },
+        {
+          "client_id": "305699376378-20nr7aq51i9anrd5r53e0eceffoavq6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASzhly3x3R0mnwXI_a-nul4vmpHCFY_mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305699376378-20nr7aq51i9anrd5r53e0eceffoavq6t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Bhraman</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Strings for onBoarding slides-->
+
+    <!--    Titles-->
+    <string name="first_slide_title">AR Classroom Program</string>
+    <string name="second_slide_title">Multi Language</string>
+    <string name="third_slide_title">Content Creation</string>
+
+    <!--    Descriptions-->
+    <string name="first_slide_desc">AR allows individuals to be present in the real time world and get to about the culture and Heritage very well.</string>
+    <string name="second_slide_desc">Supplemented with Audio Guidance in Dual Language..</string>
+    <string name="third_slide_desc">Content creation Coming soon</string>
+
+    <!--    Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="lets_get_started">Let\'s Get Started</string>
+</resources>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+
+    <ProgressBar
+        android:id="@+id/prof_pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/prof"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="20dp"
+            android:background="@color/md_theme_light_primary"
+            >
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/user_icon" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_name"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginTop="-100dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/historycard"
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:clickable="true"
+                style="?attr/materialCardViewElevatedStyle"
+                app:cardElevation="10dp"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_primary"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/ID_history_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="19dp"
+                        android:src="@drawable/ic_baseline_history_24" />
+
+                    <!--                <TextView-->
+                    <!--                    android:id="@+id/payment_label"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_centerInParent="true"-->
+                    <!--                    android:fontFamily="@font/adamina"-->
+                    <!--                    android:includeFontPadding="false"-->
+                    <!--                    android:text="$123"-->
+                    <!--                    android:textColor="@color/white"-->
+                    <!--                    android:textSize="20sp" />-->
+
+                    <TextView
+                        android:id="@+id/payment_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ID_history_icon"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/belgrano"
+                        android:includeFontPadding="false"
+                        android:text="History"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:clickable="true"
+                android:id="@+id/settings"
+                style="?attr/materialCardViewElevatedStyle"
+                app:cardElevation="10dp"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_primary"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/ID_featuredVdo_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="19dp"
+                        android:src="@drawable/ic_baseline_settings_24" />
+
+                    <!--                <TextView-->
+                    <!--                    android:id="@+id/booking_label"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_centerInParent="true"-->
+                    <!--                    android:fontFamily="@font/adamina"-->
+                    <!--                    android:includeFontPadding="false"-->
+                    <!--                    android:text="33"-->
+                    <!--                    android:textColor="@color/white"-->
+                    <!--                    android:textSize="20sp" />-->
+
+                    <TextView
+                        android:id="@+id/settingTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ID_featuredVdo_icon"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/belgrano"
+                        android:includeFontPadding="false"
+                        android:text="Settings"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Full Name"-->
+<!--                android:layout_marginBottom="10dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="60dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:drawableLeft="@drawable/ic_baseline_person_pin_24"-->
+<!--                    android:background="@color/color_secondary"-->
+<!--                    android:text="Lily James Potter"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Email"-->
+<!--                android:layout_marginBottom="10dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="60dp"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:drawableLeft="@drawable/ic_baseline_email_24"-->
+<!--                    android:background="@color/color_secondary"-->
+<!--                    android:text="lilypotter17@gmail.com"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:hint="Phone Number"-->
+            <!--                android:layout_marginBottom="10dp">-->
+
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="60dp"-->
+            <!--                    android:drawablePadding="10dp"-->
+            <!--                    android:drawableLeft="@drawable/phoneno_icon"-->
+            <!--                    android:background="@color/color_secondary"-->
+            <!--                    android:text="+91-6387070714"/>-->
+
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:hint="Password"-->
+            <!--                android:layout_marginBottom="10dp">-->
+
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="60dp"-->
+            <!--                    android:drawablePadding="10dp"-->
+            <!--                    android:drawableLeft="@drawable/password_icon"-->
+            <!--                    android:background="@color/color_secondary"-->
+            <!--                    android:text="123_@_abc"/>-->
+
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LOGOUT"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/belgrano"
+                android:textStyle="bold"
+                android:backgroundTint="@color/color_primary"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
