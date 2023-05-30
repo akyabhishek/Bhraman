@@ -5,7 +5,6 @@
     android:id="@+id/card"
     style="@style/Widget.Material3.CardView.Elevated"
     android:layout_margin="8dp"
-    android:backgroundTint="@color/white"
     android:clickable="true"
 >
 

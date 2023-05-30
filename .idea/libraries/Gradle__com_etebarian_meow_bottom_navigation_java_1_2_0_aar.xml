@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.etebarian:meow-bottom-navigation-java:1.2.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/181137b09713be1e8a19d7d41d287e91/transformed/jetified-meow-bottom-navigation-java-1.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/181137b09713be1e8a19d7d41d287e91/transformed/jetified-meow-bottom-navigation-java-1.2.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/181137b09713be1e8a19d7d41d287e91/transformed/jetified-meow-bottom-navigation-java-1.2.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/539621ab53c1a69eed6c7ba2a1cdf6da/transformed/jetified-meow-bottom-navigation-java-1.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/539621ab53c1a69eed6c7ba2a1cdf6da/transformed/jetified-meow-bottom-navigation-java-1.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/539621ab53c1a69eed6c7ba2a1cdf6da/transformed/jetified-meow-bottom-navigation-java-1.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.etebarian/meow-bottom-navigation-java/1.2.0/9adffdfe73c4475a64e576d46dd9384fa3f014fa/meow-bottom-navigation-java-1.2.0-javadoc.jar!/" />

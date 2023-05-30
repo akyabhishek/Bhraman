@@ -157,17 +157,104 @@ public class ScanFragment extends Fragment {
     {
         if(result.getContents() !=null)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setTitle("Result");
-            builder.setMessage(result.getContents());
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i)
-                {
-                    dialogInterface.dismiss();
-                }
-            }).show();
+            Toast.makeText(getContext(), "QR read - "+result.getContents(), Toast.LENGTH_SHORT).show();
+
+            try{
+            FirebaseDatabase.getInstance().getReference("objects").child(result.getContents().toLowerCase())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            if(snapshot.exists()){
+                                objectData=snapshot.getValue(ObjectData.class);
+
+                                databaseReference.child(result.getContents().toLowerCase()).child("views")
+                                        .setValue(objectData.getViews()+1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(!task.isSuccessful()){
+                                                    Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
+                                if(user==null){
+                                    lang=objectData.getEnVoice();
+                                    startAr();
+                                }
+                                else{
+                                    //language setting code
+                                    FirebaseDatabase.getInstance().getReference("users").child(user.getUid()).child("language")
+                                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                                    if(snapshot.exists()){
+                                                        if(snapshot.getValue().equals("Hindi")){
+                                                            lang= objectData.getHiVoice();
+                                                        }
+                                                        else{
+                                                            lang= objectData.getEnVoice();
+                                                        }
+                                                    }
+                                                    else{
+                                                        lang= objectData.getEnVoice();
+                                                    }
+                                                    startAr();
+                                                    pbar.setVisibility(View.GONE);
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                                }
+                                            });
+
+                                    //history code
+                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+                                    long dateandtime = Long.parseLong(sdf.format(new Date()));
+                                    HistoryData historyData=new HistoryData(objectData.getName(), dateandtime);
+
+                                    FirebaseDatabase.getInstance().getReference("users").child(user.getUid())
+                                            .child("history").child(objectData.getName().toLowerCase())
+                                            .setValue(historyData).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()) {
+                                                        Toast.makeText(getContext(), "You are viewing " + objectData.getName(), Toast.LENGTH_SHORT).show();
+                                                    }
+                                                    else{
+                                                        Toast.makeText(getContext(), "Your history is not updated", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
+                                            });
+                                }
+
+                            }
+                            else{
+                                pbar.setVisibility(View.GONE);
+                                Toast.makeText(getContext(), result.getContents()+" not found", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+            } catch(Exception e){
+            Toast.makeText(getContext(), "Scan a valid QR code. Error-"+e.getMessage() ,Toast.LENGTH_SHORT).show();
+        }
+//            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//            builder.setTitle("Result");
+//            builder.setMessage(result.getContents());
+//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+//            {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i)
+//                {
+//                    dialogInterface.dismiss();
+//                }
+//            }).show();
         }
     });
 
