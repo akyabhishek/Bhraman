@@ -31,7 +31,7 @@ import java.util.Collections;
 public class DashboardFragment extends Fragment {
 
     RecyclerView recyclerView, histrecycler;
-    private DatabaseReference databaseReference;
+        private DatabaseReference databaseReference;
     ArrayList<ObjectData> list, historyList;
     ArrayList<HistoryData> tempHis = new ArrayList<>();
     ObjectAdapter objectAdapter, objectAdapter2;
